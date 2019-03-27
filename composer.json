@@ -1,0 +1,26 @@
+{
+    "name": "calderacc/art11-bundle",
+    "description": "Blacklist and whitelist for websites",
+    "type": "library",
+    "require": {
+        "php": "^7.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.5"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Malte Huebner",
+            "email": "malte@caldera.cc"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Caldera\\Art11Bundle\\": ""
+        }
+    },
+    "scripts": {
+        "test": "vendor/phpunit/phpunit/phpunit test"
+    }
+}
