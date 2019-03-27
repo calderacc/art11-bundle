@@ -2,7 +2,7 @@
 
 namespace Caldera\Art11Bundle\Loader;
 
-use Guzzle\Client;
+use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Response;
 
 class DataLoader implements DataLoaderInterface

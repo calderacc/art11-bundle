@@ -2,15 +2,28 @@
 
 namespace Caldera\Art11Bundle\Factory;
 
+use Caldera\Art11Bundle\Loader\DataLoaderInterface;
+use JMS\Serializer\SerializerInterface;
+
 class ListFactory implements ListFactoryInterface
 {
-    public function __construct()
+    /** @var DataLoaderInterface $dataLoader */
+    protected $dataLoader;
+
+    /** @var SerializerInterface $serializer */
+    protected $serializer;
+
+    public function __construct(DataLoaderInterface $dataLoader, SerializerInterface $serializer)
     {
+        $this->dataLoader = $dataLoader;
+        $this->serializer = $serializer;
     }
 
     public function getList(): array
     {
-        
+        $content = $this->dataLoader->loadList();
+
+        return $this->serializer->deserialize($content);
     }
 
     public function getWhiteList(): array

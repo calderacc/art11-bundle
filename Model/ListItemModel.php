@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace App\Entity;
+namespace Caldera\Art11Bundle\Model;
 
 use JMS\Serializer\Annotation as JMS;
 
