@@ -9,6 +9,7 @@ use Symfony\Component\Console\Helper\Table;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Style\SymfonyStyle;
 
 class UpdateListCommand extends Command
 {
@@ -37,5 +38,10 @@ class UpdateListCommand extends Command
     {
         $list = $this->listFactory->getList();
 
+        $this->listCache->setList($list);
+
+        $io = new SymfonyStyle($input, $output);
+        $io->title('Caldera Art11 List');
+        $io->text(sprintf('Populated cache with %d items', count($list)));
     }
 }
