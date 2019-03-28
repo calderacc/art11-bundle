@@ -11,36 +11,43 @@ class ListItemModel
 {
     /**
      * @JMS\Expose
+     * @JMS\Type("int")
      */
     private $id;
 
     /**
      * @JMS\Expose
+     * @JMS\Type("string")
      */
     private $hostname;
 
     /**
      * @JMS\Expose
+     * @JMS\Type("string")
      */
     private $regex;
 
     /**
      * @JMS\Expose
+     * @JMS\Type("string")
      */
     private $listType;
 
     /**
      * @JMS\Expose
+     * @JMS\Type("DateTime")
      */
     private $createdAt;
 
     /**
      * @JMS\Expose
+     * @JMS\Type("DateTime")
      */
     private $updatedAt;
 
     /**
      * @JMS\Expose
+     * @JMS\Type("string")
      */
     private $reason;
 

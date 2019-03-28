@@ -3,6 +3,7 @@
 namespace Caldera\Art11Bundle\Command;
 
 use Caldera\Art11Bundle\Factory\ListFactoryInterface;
+use Caldera\Art11Bundle\ListCache\ListCacheInterface;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Helper\Table;
 use Symfony\Component\Console\Input\InputArgument;
@@ -14,9 +15,13 @@ class UpdateListCommand extends Command
     /** @var ListFactoryInterface $listFactory */
     protected $listFactory;
 
-    public function __construct(ListFactoryInterface $listFactory)
+    /** @var ListCacheInterface $listCache */
+    protected $listCache;
+
+    public function __construct(ListFactoryInterface $listFactory, ListCacheInterface $listCache)
     {
         $this->listFactory = $listFactory;
+        $this->listCache = $listCache;
 
         parent::__construct();
     }
@@ -30,6 +35,7 @@ class UpdateListCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output): void
     {
-        $this->listFactory->getList();
+        $list = $this->listFactory->getList();
+
     }
 }

@@ -16,6 +16,6 @@ class DataLoader implements DataLoaderInterface
         /** @var Response $response */
         $response = $client->get($url);
 
-        return $response->getBody();
+        return $response->getBody()->getContents();
     }
 }

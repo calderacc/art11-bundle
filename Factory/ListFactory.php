@@ -23,7 +23,7 @@ class ListFactory implements ListFactoryInterface
     {
         $content = $this->dataLoader->loadList();
 
-        return $this->serializer->deserialize($content);
+        return $this->serializer->deserialize($content, 'array<Caldera\\Art11Bundle\\Model\\ListItemModel>', 'json');
     }
 
     public function getWhiteList(): array
